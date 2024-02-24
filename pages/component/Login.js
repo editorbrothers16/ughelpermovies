@@ -21,7 +21,7 @@ function Login() {
                 body:JSON.stringify({email,password,auth})
             }); 
             const data = await response.json()
-            if(data.authtoken=="fail"){alert("credentials do not match")}
+            if(data.authtoken=="fail"||data.authtoken==undefined){alert("credentials do not match")}
             else {Cookies.set("authtoken",data.authtoken)
             window.open("/Download","_self")}
     }
