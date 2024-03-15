@@ -12,24 +12,17 @@ export default function SearchMovies(){
      
     const handleSubmit = async (e) => {
       e.preventDefault();
+      const auth = process.env.NEXT_PUBLIC_APIOWN
       setResu('loading..')
-      const fit ='https://api.themoviedb.org/3/search/movie?query='
-      const chalj =fit.concat(title)
-      const tif = '&include_adult=false&language=en-US&page=1c'
-      const response = await fetch(chalj.concat(tif), {
-          method: 'GET',
-          headers: {
-              'Authorization': process.env.NEXT_PUBLIC_API,
-              'Content-Type': 'application/json'
-            }
-      }); 
-      
-      const data = await response.json()
-       setResults(data.results);
+      const res = await fetch('/api/hello',{
+        method:"POST",
+        body:JSON.stringify({auth,title})
+      })
+      const dat = await res.json()
+      const resp = dat.data
+      setResults(resp.results)
 
-        (data.total_results==0?setResu('spelling error'):setResu(''))
-        
-         
+       setResu('') 
     }
       
        const handleChange =(event)=>{
