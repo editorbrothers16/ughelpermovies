@@ -23,7 +23,8 @@ export default function Home(props) {
     <meta name="google-adsense-account" content="ca-pub-5237350192487791"/>
     </Head>
      <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5237350192487791" crossorigin="anonymous"></Script>
-     <div className='position-relative p-3 bg-secondary container-fluid'>
+     <div className='bg-secondary container-fluid '>
+     <div className='position-relative p-3 container'>
  <div >
                          
     <div className="row" >
@@ -33,7 +34,7 @@ export default function Home(props) {
            <Link className="nav-link" href={`/movies/page1/${element.title}`}>
             <div className="card">
                <img src={fix.concat(element.imageUrl)} className="card-img-top" alt="..." /> 
-                            <div className="card-body  mx-auto">{element.title}  </div> </div>      
+                            <div className="card-body p-1 text-center bg-secondary">{element.title}</div> </div>      
                              </Link>
                             </div>
                              </div>
@@ -48,6 +49,7 @@ export default function Home(props) {
 
                     </span>
                     </div> 
+                    </div>
     </>
   )
 }

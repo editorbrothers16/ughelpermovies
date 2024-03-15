@@ -1,23 +1,10 @@
-import React,{useEffect,useState} from 'react'
-import {useRouter} from 'next/router'
-import Link from 'next/link'
+import React,{useState} from 'react'
 import Head from 'next/head'
 import Script from 'next/script'
-export default function Page(){
-const [info,setInfo] = useState({"a":"b"})
-const router = useRouter()
-const title = router.query.id
+export default function Page(props){
+const [info,setInfo] = useState(props.data)
 
-useEffect(()=>{
-  const auth= process.env.NEXT_PUBLIC_APIOWN
-  fetch('/api/data',{
-            method:"POST",
-                    body:JSON.stringify({auth,title})
-  }).then(response=>response.json())  
-  .then(dat=>setInfo(dat.data))             
-},[])
   return <>
-   {info?<div>
  <Head>
       <meta name="google-site-verification" content="mSKDzGkZInK-m1_i4guaxX5IxNacMUt_9LIt23k7Bn8" />
     <meta charset="utf-8" />
@@ -72,6 +59,23 @@ useEffect(()=>{
             </p>
           </div>
         </div>
-      </div></div>:<div></div>}
+      </div>
  </>
 }
+export async function getServerSideProps(context) {
+  const { params } = context;
+const {id} = params;
+const response = await fetch('https://api.themoviedb.org/3/movie/'+id+'?language=en-US', {
+  method: 'GET',
+  headers: {
+      'Content-Type': 'application/json',
+        "Authorization": process.env.PI
+  }
+}); 
+
+const data = await response.json()
+return{
+props:{data}
+}       
+  
+  }     

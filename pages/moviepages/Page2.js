@@ -23,7 +23,8 @@ export default function Page2(props) {
     <meta name="google-adsense-account" content="ca-pub-5237350192487791"/>
     </Head>
      <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5237350192487791" crossorigin="anonymous"></Script>
-     <div className='position-relative p-3 bg-secondary container-fluid'>
+     <div className='bg-secondary container-fluid '>
+     <div className='position-relative p-3 container'>
  <div >
                          
     <div className="row" >
@@ -33,7 +34,7 @@ export default function Page2(props) {
            <Link className="nav-link" href={`/movies/page2/${element.title}`}>
             <div className="card">
                <img src={fix.concat(element.imageUrl)} className="card-img-top" alt="..." /> 
-                            <div className="card-body  mx-auto">{element.title}  </div> </div>      
+                            <div className="card-body p-1 text-center bg-secondary">{element.title}</div> </div>      
                              </Link>
                             </div>
                              </div>
@@ -43,11 +44,12 @@ export default function Page2(props) {
                     <span className='mx-auto'>
                     <ul className="pagination">
     <li className="page-item"><Link className="page-link" href={'/'}>1</Link></li>
-    <li className="page-item"><Link className="page-link" href={'/Page2'}>2</Link></li>
+    <li className="page-item"><Link className="page-link" href={'/moviepages/Page2'}>2</Link></li>
   </ul>
 
                     </span>
                     </div> 
+                    </div>
     </>
   )
 }

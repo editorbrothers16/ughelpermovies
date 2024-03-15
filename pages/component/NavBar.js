@@ -1,7 +1,7 @@
 import Link from "next/link"
 export default function NavBar(){
     return <nav className="navbar position-relative navbar-expand-lg navbar-dark bg-dark">
-    <div className="container-fluid">
+    <div className="container">
         <Link className="navbar-brand" href="/">  <><img src='/logo.png' width="30" height="30" className="d-inline-block align-top mx-1" alt=""/>
           </>UGHELPERS</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
