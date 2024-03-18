@@ -14,10 +14,12 @@ function Loggedin(){
      }
      
 return <div className='bg-secondary'>
-    <a href='/https://youtu.be/bc2p_tZE2xU?feature=shared'><h2 className='text-white'>Link is generated, Click to download</h2></a>
+    <div className='container text-center p-3'>
+    <a className='nav-link' href='/https://youtu.be/bc2p_tZE2xU?feature=shared'><h2 className='text-white text-decoration-none'>Link is generated, Click to download</h2></a>
     <span className='me-5'>
-<button onClick={logout}>Logout</button>
-</span><button onClick={delId}>DeleteId</button>
+<button className='btn btn-primary' onClick={logout}>Logout</button>
+</span><button className='btn btn-danger' onClick={delId}>DeleteId</button>
+</div>
 </div>
 }
 export default Loggedin

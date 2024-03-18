@@ -16,8 +16,8 @@ const database = (await clientPromise).db(process.env.MDB)
     const email = results.email
     const user =  await collection.findOne({email})
     if(user){res.status(200).json({user})}
-    else res.status(400).json({"user":{"name":""}})}
-        else res.status(400).json({"user":{"name":""}})
+    else res.status(400).json({"user":{"name":"t"}})}
+        else res.status(400).json({"user":{"name":"t"}})
 }
- else res.status(400).json({"user":{"name":""}})
+ else res.status(400).json({"user":{"name":"t"}})
 }

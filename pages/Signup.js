@@ -33,22 +33,22 @@ export default function Signup() {
     }
   return (
     <div className="bg-secondary">
-     <form onSubmit={handleSubmit}>
-        <div className="form-group">
+     <form className='p-3' onSubmit={handleSubmit}>
+        <div className="form-group p-2">
         <label className="text-white" htmlFor="exampleInputName">Name</label>
          <input value={name} onChange={handlename} type="name" className="form-control" id="exampleName"  placeholder="Enter name"/>
          </div>
-  <div className="form-group">
+  <div className="form-group p-2">
     <label className="text-white" htmlFor="exampleInputEmail1">Email address</label>
     <input value={email} onChange={handlemail} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
   </div>
-  <div className="form-group">
+  <div className="form-group p-2">
     <label className="text-white" htmlFor="exampleInputPassword1" >Password</label>
     <input value={password} type="password"  onChange={handlepassword}  className="form-control"  placeholder="Password" id="exampleInputPassword1"/>
   </div>
-  <button type="submit" className="btn btn-primary">Submit</button>
+  <button type="submit" className="btn btn-primary m-2">Submit</button>
 </form>
-<h4 className='bg-secondary pt-2 m-0 text-black'>Already have a account - <br/><Link href="/Download" className="nav-link d-inline text-white">login</Link></h4>
+<h4 className='bg-secondary p-3 m-0 text-black'>Already have a account - <br/><Link href="/Download" className="nav-link d-inline text-white">login</Link></h4>
     </div>
   )
 }

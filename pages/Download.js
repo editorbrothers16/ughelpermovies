@@ -4,7 +4,7 @@ import Loggedin from './component/Loggedin'
 function Download() {
   const [name,setName] = useState('')
   const [cok,setCok] = useState('hell')
-  const [status,setStatus] = useState("checking")
+
   useEffect(()=>{
     setCok(!document.cookie?"":document.cookie)
     const auth = process.env.NEXT_PUBLIC_APIOWN
@@ -15,13 +15,12 @@ function Download() {
     .then(response => response.json())
     .then( data=> data.user.name)
     .then(final => setName(final))
-     setStatus("cheked")}
-
+    }
   },[cok])
   return (
     <div className='bg-secondary'>
-    {status=="checking"?<div>Loading..</div>:!name==''?<Loggedin/>:<Login/>}
-   
+    {name!='' && name!='t'?<Loggedin/>:<div></div>}
+    {name=='t'?<Login />:<div></div>}
     </div>
   )
 }
